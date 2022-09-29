@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'hello/css/blogs.css' %}" />
+{% endblock %}
+
+{% block title %}Blogs |{% endblock %}
+
+{% block content %}
+
+    
+     <div class="head">
+     <div class="title">
+         <a class="ef" href="{% url 'index' %}">MyBlog</a>
+     </div>
+     <div class="about">
+         <ul> 
+             <li><a href="{% url 'index' %}">Home</a></li>
+             <li><a href="{% url 'featured' %}">Featured</a></li>
+             <li><a href="{% url 'about' %}">About</a></li>
+             <li><a href="{% url 'contact' %}">Contact</a></li>
+         </ul>
+     </div>
+     <div class="main">
+        <ul>
+            <li>
+               <div class="sign1" id="add">
+                   {% if user.is_authenticated %}
+                         <a href="{% url 'add_blog' %}">Add Blog</a>
+                   {% else %}
+                         <a href="{% url 'login' %}">Add Blog</a>
+                   {% endif %}
+                </div>
+            </li>
+            <li>
+               <div class="sign" id="log">
+                   {% if user.is_authenticated %}
+                         <a href="{% url 'logout' %}">Log out</a>
+                   {% else %}
+                         <a href="{% url 'login' %}">Sign in</a>
+                   {% endif %}
+               </div>
+            </li>
+        </ul>
+    </div>
+ </div>
+ <div class="content">
+     <h1>Create Your Blog</h1>
+     <h4>Blogging is life</h4>
+ </div>
+ <div class="yazi">
+     <h1>Blog Details {{ id }}</h1>
+ </div>
+<div class="screen">
+    <div class="esas">
+        <span class="page1_" >
+            <div class="bash">
+                <h2>{{ blog.title }}</h2>
+            </div>
+            <div class="shekil">
+                <h4 class="sub">{{ blog.subject }}</h4>
+                <img src="{{ blog.image.url }}" alt="image1">
+            </div>
+            <div class="desc">
+                <!-- <p>{{ blog.short_description|safe }}</p> -->
+                <p>{{ blog.description|safe }}</p>
+            </div>
+            <div class="author_time">
+                <h3>By {{blog.creater_name}} - {{ blog.create_at }}</h3>
+            </div>
+        </span>
+    </div>
+</div>
+<div class="end1">
+    <div class="end">
+       <a class="ab" target="_blank" href="https://www.facebook.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/fa.png" alt="website template image"/>
+       <p>Visit<br>
+       We are on Facebook<br>
+       facebook.com/MyBlog</p></a>
+       
+       <a class="ab" target="_blank" href="https://twitter.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/tw.png" alt="website template image"/>
+       <p>Follow<br>
+       We are on Twitter<br>
+       twitter.com/MyBlog</p></a>
+   
+       
+       <a class="ab" target="_blank" href="https://www.instagram.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/in.png" alt="website template image"/>
+       <p>Like<br>
+       We are on Instagram<br>
+       instagram.com/Myblog</p></a>
+   
+       <a class="ab" target="_blank" href="https://plus.google.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/go.png" alt="website template image"/>
+       <p>+1<br>
+       We are on Google+<br>
+       plus.google.com/MyBlog</p></a>
+    </div>
+</div>
+    
+{% endblock %}
+
+

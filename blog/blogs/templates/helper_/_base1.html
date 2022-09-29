@@ -1,0 +1,20 @@
+{% load static %}
+
+<span class="page1" >
+        <div class="a">
+            <a href="{% url 'blog_details' blog.slug %}">
+            <img src="{{ blog.image.url }}" alt="image1">
+            </a>
+            <div class="yazi2">
+                <h4 class="bashliq">{{ blog.subject | upper }}</h4>
+                <h2 class="bashliq2">{{ blog.title | title }}</h2>
+                <h5 class="bashliq4">By {{blog.creater_name}} - {{ blog.create_at }}</h5>
+                <h4 class="bashliq3">{{ blog.description|striptags|slice:"0:180" }}...</h4>
+            </div>
+            <div class="read">
+                <h4>
+                    <a href="{% url 'blog_details' blog.slug %}">READ MORE</a>
+                </h4>
+            </div>
+         </div>   
+        </span>

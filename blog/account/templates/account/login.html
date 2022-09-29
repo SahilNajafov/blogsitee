@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/css/style.css' %}" />
+{% endblock %}
+
+
+{% block title %}Log in |{% endblock %}
+
+
+{% block content %}
+ <div class="login_page">
+     <ul class="login_page_ul">
+         <li>
+            <div class="part1">
+                <a href="{% url 'index' %}"><h1>MyBlog</h1></a> 
+            </div>
+         </li>
+         <li>
+            <div class="part2">
+                <div class="login_box">
+                    <div class="login_box_head">
+                        <h1>Log in</h1>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {% if error %}
+                                <div class="error">
+                                    <p>{{error}}</p>
+                                </div>
+                            {% endif %}
+                            <div class="username_">
+                                <label for="username" class="label">Username</label>
+                                <input type="text" required class="input-username" name="username">
+                            </div>
+                            <div class="pass">
+                                <label for="password" class="label">Password</label>
+                                <input type="password" required class="input-pass" name="password">
+                            </div>
+                            <div class="empty"></div>
+                            <input type="submit" value="Log in" class="login-button">
+                        </form>
+                        <div class=”text”>
+                            <p class="p">Don't have an account? <a href="{% url 'register' %}">Sign up</a></p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </li>
+     </ul>
+     <div class="end">
+        <p class="end_end">&copy; 2022 MyBlog company.  All rights reserved.</p>
+     </div>
+ </div>
+    
+{% endblock %}
+
+
+{% block js_files %} 
+   <script src="{% static 'blog/js/script.js' %}">  </script>
+{% endblock %}

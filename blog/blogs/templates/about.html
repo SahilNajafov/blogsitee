@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'hello/css/about.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="head">
+     <div class="title">
+         <a class="ef" href="{% url 'index' %}">MyBlog</a>
+     </div>
+     <div class="about">
+         <ul> 
+             <li><a href="{% url 'index' %}">Home</a></li>
+             <li><a href="{% url 'featured' %}">Featured</a></li>
+             <li><a href="{% url 'about' %}">About</a></li>
+             <li><a href="{% url 'contact' %}">Contact</a></li>
+         </ul>
+     </div>
+     <div class="main_bas">
+         <ul>
+             <li>
+                <div class="sign1" id="add">
+                    {% if user.is_authenticated %}
+                          <a href="{% url 'add_blog' %}">Add Blog</a>
+                    {% else %}
+                          <a href="{% url 'login' %}">Add Blog</a>
+                    {% endif %}
+                 </div>
+             </li>
+             <li>
+                <div class="sign" id="log">
+                    {% if user.is_authenticated %}
+                          <a class="logout_" href="{% url 'logout' %}">Log out</a>
+                    {% else %}
+                          <a href="{% url 'login' %}">Sign in</a>
+                    {% endif %}
+                </div>
+             </li>
+         </ul>
+     </div>
+ </div>
+
+<div class="main">
+    <div class="first">
+        <ul>
+            <li>
+                <div class="sol">
+                    <ul>
+                        <li>
+                            <h2 class="bashliq2">Welcome to the <br> world’s 
+                            blogplace MyBlog</h2>
+                        </li>
+                        <li>
+                            <h4 class="bashliq4">Discover more than 4 million quality resources created by 
+                            authors in over 190 countries around the world. Join forces 
+                            with talented blogers to make your blogs stand out.</h4>
+                        </li>
+                    </ul> 
+                </div>
+            </li>
+            <li>
+                <div class="sag">
+                    <img src="../static/hello/img/about4.jpg" alt="image">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="main1">
+    <div class="second">
+        <ul>
+            <li class="li1">
+                <img src="../static/hello/img/loop2.webp" alt="image">
+               <h1 class="bashliq1">How we got started</h1>
+               <img src="../static/hello/img/loop2.webp" alt="image">
+            </li>
+            <li>
+                <h3 class="bashliq3">Discovering Creative Blog site allowed me to live my childhood daydream. 
+                    Making blog wherever and whenever I want. No clients, no revisions, no 
+                    deadlines - just the pure joy of bloging without boundaries from outside.
+                    I allowed myself to leave the 24/7 and dive back into that experimental zone
+                     where I can play with traditional & digital art & design tools while making
+                     a living from it. For me Creative Blog site is the new art gallery 2.0.</h3>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+
+<div class="main1__">
+    <div class="second__">
+        <h1>Features We Think You’ll Love</h1>
+    </div>
+</div>
+<div class="main4">
+    <div class="fourth">
+        <ul>
+            <li class="sonli">
+                <p class="sonp"><img src="https://4844w13o336ze0zhw1bllkwi-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/edit-icon.png" alt="image"></p> 
+                <p class="sonp3">Blog:</p>
+                <p class="sonp2">Easily post organizational <br> news, stories of impact or other helpful information for potential donors and your community.</p>
+            </li>
+            <li class="sonli">
+                <p class="sonp"><img src="https://4844w13o336ze0zhw1bllkwi-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/email-icon.png" alt="image"></p> 
+                <p class="sonp3">Email Sign-Ups:</p>
+                <p class="sonp2">Promote and accept email newsletter sign-ups across your site.</p>
+            </li>
+            <li class="sonli">
+                <p class="sonp"><img src="https://4844w13o336ze0zhw1bllkwi-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/social-media.png" alt="image"></p> 
+                <p class="sonp3">Social Media Buttons:</p>
+                <p class="sonp2">Grow your social media <br> presence by linking website visitors to your accounts from every page of your site.</p>
+            </li>
+            <li class="sonli">
+                <p class="sonp"><img src="https://4844w13o336ze0zhw1bllkwi-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/privacy-icon.png" alt="image"></p> 
+                <p class="sonp3">Access to Analytics:</p>
+                <p class="sonp2">We’ll set you up in Google <br> Analytics and integrate it <br> with your website so that you can use actual data to inform your online marketing.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="main2">
+    <div class="third">
+        <ul class="ul-end">
+            <li>
+                <h1>Ready to create your own blog?</h1>
+            </li>
+            <li>
+                <a href="{% url 'login' %}">Get Started Today</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+ <div class="end1">
+     <div class="end">
+        <a class="ab" target="_blank" href="https://www.facebook.com/">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/fa.png" alt="website template image"/>
+        <p>Visit<br>
+        We are on Facebook<br>
+        facebook.com/MyBlog</p></a>
+        
+        <a class="ab" target="_blank" href="https://twitter.com/">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/tw.png" alt="website template image"/>
+        <p>Follow<br>
+        We are on Twitter<br>
+        twitter.com/MyBlog</p></a>
+    
+        
+        <a class="ab" target="_blank" href="https://www.instagram.com/">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/in.png" alt="website template image"/>
+        <p>Like<br>
+        We are on Instagram<br>
+        instagram.com/Myblog</p></a>
+    
+        <a class="ab" target="_blank" href="https://plus.google.com/">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/go.png" alt="website template image"/>
+        <p>+1<br>
+        We are on Google+<br>
+        plus.google.com/MyBlog</p></a>
+     </div>
+ </div>
+{% endblock %}
+
+{% block js_files %} 
+{% endblock %}
+
+    

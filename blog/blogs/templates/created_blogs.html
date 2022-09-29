@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'hello/css/created_blogs.css' %}" />
+{% endblock %}
+
+
+{% block title %}Add Blog |{% endblock %}
+
+
+{% block content %}
+
+<div class="head">
+    <div class="title">
+        <a class="ef" href="{% url 'index' %}">MyBlog</a>
+    </div>
+    <div class="about">
+        <ul> 
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'featured' %}">Featured</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <ul>
+            <li>
+                <div class="sign1" id="add">
+                    <a href="{% url 'add_blog' %}">Add Blog</a>
+                 </div>
+             </li>
+            <li>
+               <div class="sign" id="log">
+                    <a href="{% url 'logout' %}">Log out</a>
+               </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="yazi">
+    <h1>Your Blogs</h1>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Blog Title</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for blog in blog_obj %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td class="col-1"><a href="{% url 'blog_details' blog.slug %}">{{blog.title}}</a></td>
+            <td class="col-2">{{blog.create_at}}</td>
+            <td class="col-3">
+                <a href="{% url 'blog_edit' blog.slug %}" class="edit">Edit</a>
+                <a href="{% url 'blog_delete' blog.id %}" class="delete">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<div class="end1">
+    <div class="end">
+       <a class="ab" target="_blank" href="https://www.facebook.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/fa.png" alt="website template image"/>
+       <p>Visit<br>
+       We are on Facebook<br>
+       facebook.com/MyBlog</p></a>
+       
+       <a class="ab" target="_blank" href="https://twitter.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/tw.png" alt="website template image"/>
+       <p>Follow<br>
+       We are on Twitter<br>
+       twitter.com/MyBlog</p></a>
+   
+       
+       <a class="ab" target="_blank" href="https://www.instagram.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/in.png" alt="website template image"/>
+       <p>Like<br>
+       We are on Instagram<br>
+       instagram.com/Myblog</p></a>
+   
+       <a class="ab" target="_blank" href="https://plus.google.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/go.png" alt="website template image"/>
+       <p>+1<br>
+       We are on Google+<br>
+       plus.google.com/MyBlog</p></a>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block js_files %} 
+   <script src="{% static 'blog/js/script.js' %}">  </script>
+{% endblock %}

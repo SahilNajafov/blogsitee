@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'hello/css/add.css' %}" />
+{% endblock %}
+
+
+{% block title %}Add Blog |{% endblock %}
+
+
+{% block content %}
+
+<div class="head">
+    <div class="title">
+        <a class="ef" href="{% url 'index' %}">MyBlog</a>
+    </div>
+    <div class="about">
+        <ul> 
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'featured' %}">Featured</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <ul>
+            <li>
+                <div class="view">
+                   <a href="{% url 'created_blogs' %}">View Your Blogs</a> 
+                </div>
+            </li>
+            <li>
+               <div class="sign" id="log">
+                    <a href="{% url 'logout' %}">Log out</a>
+               </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="yazi">
+    <h1>Add Blog</h1>
+</div>
+
+
+
+<div class="container">
+    <form class="addform" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <button type="submit" class="add-button">Add</button>
+    </form>
+</div>
+
+
+
+
+
+<div class="end1">
+    <div class="end">
+       <a class="ab" target="_blank" href="https://www.facebook.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/fa.png" alt="website template image"/>
+       <p>Visit<br>
+       We are on Facebook<br>
+       facebook.com/MyBlog</p></a>
+       
+       <a class="ab" target="_blank" href="https://twitter.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/tw.png" alt="website template image"/>
+       <p>Follow<br>
+       We are on Twitter<br>
+       twitter.com/MyBlog</p></a>
+   
+       
+       <a class="ab" target="_blank" href="https://www.instagram.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/in.png" alt="website template image"/>
+       <p>Like<br>
+       We are on Instagram<br>
+       instagram.com/Myblog</p></a>
+   
+       <a class="ab" target="_blank" href="https://plus.google.com/">
+           <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/go.png" alt="website template image"/>
+       <p>+1<br>
+       We are on Google+<br>
+       plus.google.com/MyBlog</p></a>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block js_files %} 
+   <script src="{% static 'blog/js/script.js' %}">  </script>
+{% endblock %}

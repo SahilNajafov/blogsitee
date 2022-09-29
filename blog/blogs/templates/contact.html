@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'hello/css/contact.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="head">
+     <div class="title">
+         <a class="ef" href="{% url 'index' %}">MyBlog</a>
+     </div>
+     <div class="about">
+         <ul> 
+             <li><a href="{% url 'index' %}">Home</a></li>
+             <li><a href="{% url 'featured' %}">Featured</a></li>
+             <li><a href="{% url 'about' %}">About</a></li>
+             <li><a href="{% url 'contact' %}">Contact</a></li>
+         </ul>
+     </div>
+     <div class="main_bas">
+         <ul>
+             <li>
+                <div class="sign1" id="add">
+                    {% if user.is_authenticated %}
+                          <a href="{% url 'add_blog' %}">Add Blog</a>
+                    {% else %}
+                          <a href="{% url 'login' %}">Add Blog</a>
+                    {% endif %}
+                 </div>
+             </li>
+             <li>
+                <div class="sign" id="log">
+                    {% if user.is_authenticated %}
+                          <a class="logout_" href="{% url 'logout' %}">Log out</a>
+                    {% else %}
+                          <a href="{% url 'login' %}">Sign in</a>
+                    {% endif %}
+                </div>
+             </li>
+         </ul>
+     </div>
+ </div>
+
+ <div class="main">
+    <div class="first">
+        <ul>
+            <li>
+                <div class="sol">
+                    <ul>
+                        <li>
+                            <h2 class="bashliq2">Get in touch</h2>
+                        </li>
+                        <li>
+                            <h4 class="bashliq4">Want to get in touch? We'd love to hear from you. Here's how you can reach us...</h4>
+                        </li>
+                    </ul> 
+                </div>
+            </li>
+            <li>
+                <div class="sag">
+                    <img src="../static/hello/img/contactus.webp" alt="image">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="main1">
+    <div class="second">
+        <ul>
+            <li>
+                <div class="box1">
+                    <ul>
+                        <li><img src="https://www.hubspot.com/hubfs/Contact%20Us/phone.svg" alt="image"></li>
+                        <li class="box1-li2"><span>Talk to Sales</span></li>
+                        <li class="box1-li3"><span>Interested in MyBlog’s software? Just pick up the phone to chat with a member of our sales team.</span></li>
+                        <li class="box1-li5"><span><a href="#">+994 55 327 22 13</a></span></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="box2">
+                    <ul>
+                        <li><img src="https://www.hubspot.com/hubfs/Contact%20Us/chat.svg" alt="image"></li>
+                        <li class="box1-li2"><span>Contact Customer Support</span></li>
+                        <li class="box1-li3"><span>Sometimes you need a little help from your friends. Or a MyBlog support rep. Don’t worry… we’re here for you.</span></li>
+                        <li class="box1-li4"><span><a target="_blank" href="https://web.whatsapp.com/">Contact Us</a></span></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+<div class="main1_">
+    <div class="second_">
+        <h1>Connect with one of our global offices</h1>
+    </div>
+</div>
+<div class="main2">
+    <div class="third">
+        <ul>
+            <li>
+                <div class="part_1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12159.437351280558!2d49.8321651!3d40.3676432!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe3266cb283740f8f!2zQXrJmXJiYXljYW4gRMO2dmzJmXQgxLBxdGlzYWQgVW5pdmVyc2l0ZXRp!5e0!3m2!1saz!2s!4v1653936195473!5m2!1saz!2s" width="677" height="532" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </li>
+            <li>
+                <div class="part_2">
+                    <ul>
+                        <li><p class="p-1">Headquarters</p></li>
+                        <li><p class="p-2">6 Istiglaliyyat, Baku, Azərbaycan</p></li>
+                        <li><p class="p-3">Phone / Fax</p></li>
+                        <li><p class="p-4">+994 MyBlog <br>
+                            (+994 12 437 10 86)</p>
+                        </li>
+                        <li><p class="p-5">Fax: +994 12 327 22 13</p></li>
+                        <li><p class="p-6">Site Information</p></li>
+                        <li><h2 class="p-7"><a href="{% url 'about' %}">Visit our site info</a></h2></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="main1__">
+    <div class="second__">
+        <h1>Call Sales using one of our local numbers</h1>
+    </div>
+</div>
+<div class="main4">
+    <div class="fourth">
+        <ul>
+            <li class="sonli">
+                <p class="sonp">United Kingdom</p> 
+                <p class="sonp2">+44 20 3514 0663 (English)</p>
+            </li>
+            <li class="sonli">
+                <p class="sonp">Colombia</p>
+                <p class="sonp2">+57 601 381 9242 (Spanish)</p>
+            </li>
+            <li class="sonli">
+                <p class="sonp">Germany</p>
+                <p class="sonp2">+49 32 221094286 (German)</p>
+                <p class="sonp2">+49 69 153253503 (English)</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="sonli">
+                <p class="sonp">France</p> 
+                <p class="sonp2">+33 1 84 88 62 37 (English)</p>
+                <p class="sonp2">+33 1 86 26 07 91 (French)</p>
+            </li>
+            <li class="sonli">
+                <p class="sonp">Austria</p>
+                <p class="sonp2">+43 720 902 456 (German)</p>
+                <p class="sonp2">+43 720 902 440 (English)</p>
+            </li>
+            <li class="sonli">
+                <p class="sonp">Portugal</p>
+                <p class="sonp2">+351 3 0880 1663 (English)</p>
+            </li>
+        </ul>
+    </div>
+</div>
+ <div class="end1">
+     <div class="end">
+        <a class="ab" target="_blank" href="https://www.facebook.com/">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/fa.png" alt="website template image"/>
+        <p>Visit<br>
+        We are on Facebook<br>
+        facebook.com/MyBlog</p></a>
+        
+        <a class="ab" target="_blank" href="https://twitter.com/">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/tw.png" alt="website template image"/>
+        <p>Follow<br>
+        We are on Twitter<br>
+        twitter.com/MyBlog</p></a>
+    
+        
+        <a class="ab" target="_blank" href="https://www.instagram.com/">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/in.png" alt="website template image"/>
+        <p>Like<br>
+        We are on Instagram<br>
+        instagram.com/Myblog</p></a>
+    
+        <a class="ab" target="_blank" href="https://plus.google.com/">
+            <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page273/summer/assets/images/go.png" alt="website template image"/>
+        <p>+1<br>
+        We are on Google+<br>
+        plus.google.com/MyBlog</p></a>
+     </div>
+ </div>
+{% endblock %}
+
+{% block js_files %} 
+{% endblock %}
